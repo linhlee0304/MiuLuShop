@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="root" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doannganh.qldvvpkcm.TrangChuController">
+   <children>
+      <HBox prefHeight="1082.0" prefWidth="1920.0">
+         <children>
+            <VBox prefHeight="1080.0" prefWidth="100.0">
+               <children>
+                  <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadTaoHoaDon" prefHeight="100.0" prefWidth="100.0" text="Đơn hàng">
+                     <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../image/order_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadDoiTra" prefHeight="100.0" prefWidth="100.0" text="Đổi trả">
+                     <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../image/return-order.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadQuanLyKhachHang" prefHeight="100.0" prefWidth="100.0" text="Khách hàng">
+                     <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../image/customer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadQuanLyThuCung" prefHeight="100.0" prefWidth="100.0" text="Thú cưng">
+                     <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../image/pet-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#logoutHandler" prefHeight="26.0" prefWidth="218.0" text="Thoát" />
+               </children>
+            </VBox>
+            <AnchorPane fx:id="acpLoad" minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1820.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="71.0" prefWidth="1820.0" text="TRANG CHỦ NHÂN VIÊN" textAlignment="CENTER" textOverrun="CLIP">
+                     <font>
+                        <Font name="Arial Bold" size="35.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>

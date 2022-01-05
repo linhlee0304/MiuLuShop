@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1462.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doannganh.qldvvpkcm.ThongkeController">
+   <children>
+      <VBox prefHeight="1080.0" prefWidth="1462.0">
+         <children>
+            <AnchorPane prefHeight="297.0" prefWidth="1462.0">
+               <children>
+                  <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="298.0" prefWidth="1462.0">
+                     <children>
+                        <HBox prefHeight="98.0" prefWidth="1462.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="100.0" prefWidth="1462.0" text="Thống kê" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="37.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="-200.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="90.0" prefWidth="1462.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="115.0" prefWidth="220.0" text="Bộ lọc">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="94.0" prefWidth="163.0" text="Ngày bắt đầu:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="ngayBD" onAction="#selectedNgayBD" prefHeight="30.0" prefWidth="192.0">
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <Label alignment="CENTER" prefHeight="122.0" prefWidth="161.0" text="Ngày kết thúc:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="ngayKT" onAction="#selectedNgayKT" prefHeight="30.0" prefWidth="192.0">
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <Label alignment="CENTER" prefHeight="122.0" prefWidth="161.0" text="Thống kê theo:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="loaiTK" prefHeight="32.0" prefWidth="150.0">
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="129.0" prefWidth="1462.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="107.0" prefWidth="216.0" text="Dạng biểu đồ">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btPieChart" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadPieChart" prefHeight="48.0" prefWidth="48.0" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/piechart-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btLineChart" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadLineChart" prefHeight="48.0" prefWidth="48.0" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="50.0" top="30.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="44.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/linechart-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btBarChart" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadBarChart" prefHeight="48.0" prefWidth="48.0" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="50.0" top="30.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="41.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/barchart-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btAreaChart" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadAreaChart" prefHeight="48.0" prefWidth="48.0" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="50.0" top="30.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="37.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../image/areachart-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER_RIGHT" prefHeight="111.0" prefWidth="138.0" text="Dữ liệu:">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="cbDoanhThu" mnemonicParsing="false" onAction="#checkDoanhThu" prefHeight="36.0" prefWidth="147.0" text="Doanh Thu">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="40.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="cbChiPhi" mnemonicParsing="false" onAction="#checkChiPhi" prefHeight="36.0" prefWidth="138.0" text="Chi phí">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="40.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="cbLoiNhuan" mnemonicParsing="false" onAction="#checkLoiNhuan" prefHeight="36.0" prefWidth="147.0" text="Lợi nhuận">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="40.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="chartPane" prefHeight="759.0" prefWidth="1462.0">
+               <children>
+                  <PieChart fx:id="pieChart" layoutX="145.0" layoutY="4.0" prefHeight="480.0" prefWidth="542.0" visible="false" />
+                  <BarChart fx:id="barChart" layoutX="57.0" layoutY="29.0" prefHeight="489.0" prefWidth="1006.0" visible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xBar" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yBar" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <LineChart fx:id="lineChart" layoutX="61.0" layoutY="3.0" prefHeight="506.0" prefWidth="1000.0" visible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xLine" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yLine" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <AreaChart fx:id="areaChart" layoutX="100.0" layoutY="9.0" prefHeight="506.0" prefWidth="936.0" visible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xArea" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yArea" side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+               </children></AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
